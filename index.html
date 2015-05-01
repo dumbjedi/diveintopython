@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Diveintopython by dumbjedi</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Diveintopython</h1>
+        <p>Learning Python</p>
+
+        <p class="view"><a href="https://github.com/dumbjedi/diveintopython">View the Project on GitHub <small>dumbjedi/diveintopython</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/dumbjedi/diveintopython/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/dumbjedi/diveintopython/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/dumbjedi/diveintopython">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a id="setting-up-python" class="anchor" href="#setting-up-python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting Up Python.</h3>
+
+<p>The first step in Python's installation is running a configure script which snoops around your system, looking for packages that it needs to build various capabilities and extensions with. Having these packages installed before running configure makes sure it finds them.</p>
+
+<p>Here are some packages that have to be installed to have various aspects of Python functioning:</p>
+
+<pre><code>$ sudo apt-get install libreadline-dev
+$ sudo apt-get install libsqlite3-dev
+$ sudo apt-get install libbz2-dev
+$ sudo apt-get install libssl-dev
+</code></pre>
+
+<p>Go to <a href="http://www.python.org/">http://www.python.org/</a>. In the "Quick links" section on the left-hand side of the page, "Source distribution" is a direct link to the tarball. Download it. Unzip the tarball, and from the root of the created directory (which will be called Python-2.7.2 or something similar, depending on the version):</p>
+
+<pre><code>./configure
+make -j
+</code></pre>
+
+<p>I found that the default configure settings work fine for Ubuntu 10.04 and there's no real need to specify extra --with flags.</p>
+
+<p>You can now check that Python was correctly built by executing ./python and falling into its interactive terminal. If you want, you can also execute the Python test-suite with make test, though it may take a long time to run (~10 minutes on a relatively fast machine).</p>
+
+<pre><code>sudo make install
+</code></pre>
+
+<p>This installs Python into /usr/local/bin. Depending on the configuration of your system, you may want to add symlinks to the newly created /usr/local/bin/python2.7 in /usr/bin/ as well.</p>
+
+<p>That's it, you now have Python 2.7 installed.</p>
+
+<p>Python has a powerful packaging &amp; installation machinery for its modules, but it doesn't come pre-installed with Python itself.</p>
+
+<p>So it's a good idea to install setuptools (or distribute), followed by pip.</p>
+
+<p>From now, pip can be used to install other Python modules very conveniently. For example, all you need to have the IPython shell installed is:</p>
+
+<pre><code>sudo pip install ipython
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/dumbjedi">dumbjedi</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
